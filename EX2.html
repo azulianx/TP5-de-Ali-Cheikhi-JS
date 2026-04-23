@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jeu de devinette</title>
+</head>
+<body>
+
+<button onclick="lancerQuiz()">Démarrer le Quiz</button>
+
+<script>
+let nombreSecret = Math.floor(Math.random() * 10) + 1;
+let tentative;
+let essais = 0;
+
+do {
+    tentative = parseInt(prompt("Devinez un nombre entre 1 et 10 :"));
+    essais++;
+
+    if (tentative < nombreSecret) {
+        alert("C'est plus grand !");
+    } else if (tentative > nombreSecret) {
+        alert("C'est plus petit !");
+    } else {
+        alert("Bravo ! Trouvé en " + essais + " essais.");
+    }
+
+} while (tentative !== nombreSecret);
+
+</script>
+
+</body>
+</html>
